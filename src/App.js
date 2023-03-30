@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import {createTheme} from '@material-ui/core/styles';
+import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 
-function App() {
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate
+} from 'react-router-dom';
+
+import SignUp from './pages/SignUp';
+import SignIn from './pages/SignIn';
+
+const theme = createTheme({
+  palette: {
+      primary: {
+          main: '#768BAF',
+      },
+      secondary: {
+          main: '#995BA3',
+      },
+  },
+});
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MuiThemeProvider theme={theme}>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Navigate to="/sign-in" />} />
+          <Route path="/sign-up" element={<SignUp />} />
+          <Route path="/sign-in" element={<SignIn />} />
+          {/* <Route index path="*" element={<NotFound />} /> */}
+          </Routes>
+      </Router>
+    </MuiThemeProvider>
   );
 }
-
-export default App;

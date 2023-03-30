@@ -1,0 +1,35 @@
+import styled from 'styled-components';
+
+import Container from '../Container';
+
+export const StyledContainer = styled(Container)`
+  font-size: 16px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+`;
+
+export const Title = styled.h1`
+  font-family: 'Rock Salt', cursive; 
+  font-size: 15px;
+  margin-top: 10px;
+  color: #995889;
+`;
+
+export const Label = styled.h1`
+  font-size: 24px;
+  margin-bottom: 10px;
+`;
+
+export const Row = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  
+  svg {
+    color: #1390CE;
+  }
+`;

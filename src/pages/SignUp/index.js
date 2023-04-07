@@ -31,7 +31,7 @@ export default function SignUp() {
         toast('Successfully enrolled! Please login.');
         navigate('/sign-in');
       } catch (error) {
-        toast('Could not register! ' + error.response.data?.message || '');
+        toast('Could not register! ' + (error.response?.data.message || ''));
       }
     }
   }

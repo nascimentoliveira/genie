@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 import AuthLayout from '../../layouts/Auth';
 import Input from '../../components/Form/Input';
@@ -8,21 +9,25 @@ import Link from '../../components/Link';
 import { Row, Title, Label } from '../../components/Auth';
 import logo from "../../assets/images/logo.svg"
 import useSignIn from '../../hooks/api/useSignIn';
+import UserContext from '../../contexts/UserContext';
 
 export default function SignIn() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
   const { loadingSignIn, signIn } = useSignIn();
+  const { setUserData } = useContext(UserContext);
+  const navigate = useNavigate();
   
   async function submit(event) {
     event.preventDefault();
 
     try {
-      await signIn(email, password);
+      const userData = await signIn(email, password);
       toast('Successfully!');
+      setUserData(userData);
+      navigate('/dashboard');
     } catch (error) {
-      toast('Unable to access your account!');
+      toast('Unable to access your account! ' + (error.response?.data.message || ''));
     }
   } 
 

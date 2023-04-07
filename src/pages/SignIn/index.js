@@ -29,7 +29,7 @@ export default function SignIn() {
   return (
     <AuthLayout>
       <Row>
-        <img src={logo} alt="genie" width="250px" />
+        <img src={logo} alt="genie" width="200px" />
         <Title>may your wish come true</Title>
       </Row>
       <Row>

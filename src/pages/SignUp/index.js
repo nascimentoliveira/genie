@@ -12,6 +12,7 @@ import useSignUp from '../../hooks/api/useSignUp';
 
 export default function SignUp() {
   const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
@@ -26,11 +27,11 @@ export default function SignUp() {
       toast('Passwords must be the same!');
     } else {
       try {
-        await signUp(email, password);
+        await signUp(email, name, password);
         toast('Successfully enrolled! Please login.');
         navigate('/sign-in');
       } catch (error) {
-        toast('Could not register!');
+        toast('Could not register! ' + error.response.data?.message || '');
       }
     }
   }
@@ -38,13 +39,14 @@ export default function SignUp() {
   return (
     <AuthLayout>
       <Row>
-        <img src={logo} alt="genie" width="250px" />
+        <img src={logo} alt="genie" width="200px" />
         <Title>may your wish come true</Title>
       </Row>
       <Row>
         <Label>Sign up</Label>
         <form onSubmit={submit}>
           <Input label="E-mail" type="text" fullWidth value={email} onChange={e => setEmail(e.target.value)} />
+          <Input label="Name" type="text" fullWidth value={name} onChange={e => setName(e.target.value)} />
           <Input label="Password" type="password" fullWidth value={password} onChange={e => setPassword(e.target.value)} />
           <Input label="Repeat your password" type="password" fullWidth value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)} />
           <Button type="submit" color="primary" fullWidth disabled={loadingSignUp}>Sign up</Button>

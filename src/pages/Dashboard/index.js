@@ -1,5 +1,5 @@
-import Button from '../../components/Dashboard/Button';
 import styled from 'styled-components';
+import { Outlet } from 'react-router-dom';
 
 import DashboardLayout from '../../layouts/Dashboard';
 
@@ -7,7 +7,7 @@ export default function Dashboard() {
   return (
     <DashboardLayout>
       <Container>
-        <Button size="large" color="primary">NEW WISH</Button>
+        <Outlet />
       </Container>
     </DashboardLayout>
   );

@@ -1,7 +1,7 @@
-import styled from 'styled-components';
-import { Outlet } from 'react-router-dom';
+import styled from "styled-components";
+import { Outlet } from "react-router-dom";
 
-import DashboardLayout from '../../layouts/Dashboard';
+import DashboardLayout from "../../layouts/Dashboard";
 
 export default function Dashboard() {
   return (

@@ -1,37 +1,39 @@
-import {createTheme} from '@material-ui/core/styles';
-import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles'
-import { ToastContainer } from 'react-toastify';
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { ToastContainer } from "react-toastify";
 
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Navigate
-} from 'react-router-dom';
+} from "react-router-dom";
 
-import SignUp from './pages/SignUp';
-import SignIn from './pages/SignIn';
-import Dashboard from './pages/Dashboard';
-import { UserProvider } from './contexts/UserContext';
-import useToken from './hooks/useToken';
-import Overview from './pages/Dashboard/Overview';
+import SignUp from "./pages/SignUp";
+import SignIn from "./pages/SignIn";
+import Dashboard from "./pages/Dashboard";
+import NewWish from "./pages/Dashboard/NewWish";
+import { UserProvider } from "./contexts/UserContext";
+import useToken from "./hooks/useToken";
+import Overview from "./pages/Dashboard/Overview";
+
 
 const theme = createTheme({
   palette: {
-      primary: {
-          main: '#768BAF',
-      },
-      secondary: {
-          main: '#995BA3',
-      },
+    primary: {
+      main: "#768BAF",
+    },
+    secondary: {
+      main: "#995BA3",
+    },
   },
 });
+
 
 export default function App() {
   return (
     <>
       <ToastContainer />
-      <MuiThemeProvider theme={theme}>
+      <ThemeProvider theme={theme}>
         <UserProvider>
           <Router>
             <Routes>
@@ -46,13 +48,14 @@ export default function App() {
                   </ProtectedRouteGuard>
                 }
               >
-                <Route path="overview" element={<Overview />} />              
+                <Route path="overview" element={<Overview />} />
+                <Route path="new-wish" element={<NewWish />} />               
                 <Route index path="*" element={<Navigate to="/dashboard/overview" />} />
               </Route>
             </Routes>
           </Router>
         </UserProvider>
-      </MuiThemeProvider>
+        </ThemeProvider>
     </>
   );
 }

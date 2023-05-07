@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import Container from '../Container';
+import Container from "../Container";
 
 export const StyledContainer = styled(Container)`
   font-size: 16px;
@@ -11,7 +11,7 @@ export const StyledContainer = styled(Container)`
 `;
 
 export const Title = styled.h1`
-  font-family: 'Rock Salt', cursive; 
+  font-family: "Rock Salt", cursive; 
   font-size: 15px;
   margin-top: 10px;
   color: #995889;

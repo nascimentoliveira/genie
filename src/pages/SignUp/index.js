@@ -1,20 +1,20 @@
-import { useState } from 'react';
-import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
+import { useState } from "react";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 import logo from "../../assets/images/logo.svg"
-import AuthLayout from '../../layouts/Auth';
-import Input from '../../components/Form/Input';
-import Button from '../../components/Form/Button';
-import { Row, Title, Label } from '../../components/Auth';
-import Link from '../../components/Link';
-import useSignUp from '../../hooks/api/useSignUp';
+import AuthLayout from "../../layouts/Auth";
+import Input from "../../components/Form/Input";
+import Button from "../../components/Form/Button";
+import { Row, Title, Label } from "../../components/Auth";
+import Link from "../../components/Link";
+import useSignUp from "../../hooks/api/useSignUp";
 
 export default function SignUp() {
-  const [email, setEmail] = useState('');
-  const [name, setName] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   const { loadingSignUp, signUp } = useSignUp();
 
@@ -24,14 +24,14 @@ export default function SignUp() {
     event.preventDefault();
 
     if (password !== confirmPassword) {
-      toast('Passwords must be the same!');
+      toast("Passwords must be the same!");
     } else {
       try {
         await signUp(email, name, password);
-        toast('Successfully enrolled! Please login.');
-        navigate('/sign-in');
+        toast("Successfully enrolled! Please login.");
+        navigate("/sign-in");
       } catch (error) {
-        toast('Could not register! ' + (error.response?.data.message || ''));
+        toast("Could not register! " + (error.response?.data.message || ""));
       }
     }
   }

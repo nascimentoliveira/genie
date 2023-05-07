@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export default function PageTitle({ title }) { 
   return <TitleStyle>{`${title}`}</TitleStyle>;
@@ -6,7 +6,7 @@ export default function PageTitle({ title }) {
 
 const TitleStyle = styled.p`
   text-align: center;
-  font-family: 'Kaushan Script', cursive; 
+  font-family: "Kaushan Script", cursive; 
   font-size: 40px;
   margin-bottom: 20px;
   color: #995889;

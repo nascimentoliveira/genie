@@ -1,7 +1,7 @@
-import Fab from '@material-ui/core/Fab';
-import AddIcon from '@material-ui/icons/Add';
+import Fab from "@mui/material/Fab";
+import AddIcon from "@mui/icons-material/Add";
 
-export default function Button({ variant='extended', children, ...props }) {
+export default function Button({ variant="extended", children, ...props }) {
   return (
     <Fab variant={variant} aria-label="Delete" {...props}>
       <AddIcon />

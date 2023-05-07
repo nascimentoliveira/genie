@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import Fab from "@material-ui/core/Fab";
-import RemoveIcon from "@material-ui/icons/Remove";
-import AddIcon from "@material-ui/icons/Add";
+import Fab from "@mui/material/Fab";
+import RemoveIcon from "@mui/icons-material/Remove";
+import AddIcon from "@mui/icons-material/Add";
 
 export default function Balance() {
   return (

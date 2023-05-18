@@ -29,7 +29,7 @@ export default function SignUp() {
       try {
         await signUp(email, name, password);
         toast("Successfully enrolled! Please login.");
-        navigate("/sign-in");
+        navigate("/auth");
       } catch (error) {
         toast("Could not register! " + (error.response?.data.message || ""));
       }
@@ -53,7 +53,7 @@ export default function SignUp() {
         </form>
       </Row>
       <Row>
-        <Link to="/sign-in">Already have an account? Sign In</Link>
+        <Link to="/auth">Already have an account? Sign In</Link>
       </Row>
     </AuthLayout>
   );

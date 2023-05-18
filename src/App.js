@@ -37,11 +37,11 @@ export default function App() {
         <UserProvider>
           <Router>
             <Routes>
-              <Route path="/" element={<Navigate to="/sign-in" />} />
-              <Route path="/sign-up" element={<SignUp />} />
-              <Route path="/sign-in" element={<SignIn />} />
+              <Route path="/" element={<Navigate to="/accounts" />} />
+              <Route path="/users/new" element={<SignUp />} />
+              <Route path="/auth" element={<SignIn />} />
               <Route
-                path="/dashboard"
+                path="/accounts"
                 element={
                   <ProtectedRouteGuard>
                     <Dashboard />
@@ -49,8 +49,8 @@ export default function App() {
                 }
               >
                 <Route path="overview" element={<Overview />} />
-                <Route path="new-wish" element={<NewWish />} />               
-                <Route index path="*" element={<Navigate to="/dashboard/overview" />} />
+                <Route path="wishes/new" element={<NewWish />} />               
+                <Route index path="*" element={<Navigate to="/accounts/overview" />} />
               </Route>
             </Routes>
           </Router>
@@ -63,7 +63,7 @@ export default function App() {
 function ProtectedRouteGuard({ children }) {
   const token = useToken();
   if (!token) {
-    return <Navigate to="/sign-in" />;
+    return <Navigate to="/auth" />;
   }
   return <>
     {children}

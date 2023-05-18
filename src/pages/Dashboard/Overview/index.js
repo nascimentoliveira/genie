@@ -19,7 +19,7 @@ export default function Overview() {
           <TextBox>
             <Text text={"No wish. Start now!"} />
           </TextBox>
-          <Button size="large" color="primary" onClick={()=> navigate("/dashboard/new-wish")}>NEW WISH</Button>
+          <Button size="large" color="primary" onClick={()=> navigate("/accounts/wishes/new")}>NEW WISH</Button>
         </AlignBox>
       </>
     );

@@ -9,7 +9,7 @@
 
 # 🚧👷🏻 Genie - Plataforma de Gerenciamento de Desejos
 
-> 👷🏻 Genie ainda está sendo desenvolvido! Algumas funcionalidades podem não estar disponíveis.
+> 👷🏻 Genie está sendo desenvolvido! Algumas funcionalidades podem não estar disponíveis.
 
 Genie é uma plataforma inovadora que ajuda os usuários a alcançar seus desejos financeiros, fornecendo uma maneira fácil e eficiente de gerenciar suas economias por meio de micro poupanças. Com o Genie, os usuários podem cadastrar seus desejos, definir metas de valor e prazos para resgate, e acompanhar seu progresso ao longo do tempo.
 

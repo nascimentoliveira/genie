@@ -15,6 +15,7 @@ import NewWish from "./pages/Dashboard/NewWish";
 import { UserProvider } from "./contexts/UserContext";
 import useToken from "./hooks/useToken";
 import Overview from "./pages/Dashboard/Overview";
+import MaintenancePage from "./pages/Maintenance";
 
 
 const theme = createTheme({
@@ -48,8 +49,8 @@ export default function App() {
                   </ProtectedRouteGuard>
                 }
               >
-                <Route path="overview" element={<Overview />} />
-                <Route path="wishes/new" element={<NewWish />} />               
+                <Route path="overview" element={<MaintenancePage />} />
+                <Route path="wishes/new" element={<MaintenancePage />} />               
                 <Route index path="*" element={<Navigate to="/accounts/overview" />} />
               </Route>
             </Routes>

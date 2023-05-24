@@ -10,10 +10,10 @@ const MaintenancePage = () => {
       <PageTitle title={"overview"} />
       <AlignBox>
         <TextBox>
-          <Text text={"Página em construção!"} />
+          <Text text={"Page under maintenance!"} />
         </TextBox>
         <TextBox>
-          <Text text={"Esta página está momentaneamente em manutenção para a implementação de novas funcionalidades!"} />
+          <Text text={"This page is currently under maintenance for the implementation of new features!"} />
         </TextBox>
       </AlignBox>
     </>
